@@ -34,7 +34,12 @@ namespace SuaveControls.MaterialButton.Droid
                 return;
 
             var materialButton = (Shared.MaterialButton)Element;
+
+
+            // we need to reset the StateListAnimator to override the setting of Elevation on touch down and release.
             Control.StateListAnimator = new Android.Animation.StateListAnimator();
+
+            // set the elevation manually
             ViewCompat.SetElevation(this, materialButton.Elevation);
             ViewCompat.SetElevation(Control, materialButton.Elevation);
         }

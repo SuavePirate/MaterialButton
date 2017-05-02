@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MaterialButtonExample"
+             xmlns:suave="clr-namespace:SuaveControls.MaterialButton.Shared;assembly=SuaveControls.MaterialButton.Shared"
+             x:Class="MaterialButtonExample.MainPage">
+
+	<suave:MaterialButton x:Name="MyButton" BackgroundColor="#03A9F4" TextColor="White" Text="Click to raise elevation" Elevation="1" 
+           VerticalOptions="Center" 
+           HorizontalOptions="Center"
+           Clicked="MyButton_Clicked"/>
+
+</ContentPage>

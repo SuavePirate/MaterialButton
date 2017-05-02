@@ -5,9 +5,14 @@
              xmlns:suave="clr-namespace:SuaveControls.MaterialButton.Shared;assembly=SuaveControls.MaterialButton.Shared"
              x:Class="MaterialButtonExample.MainPage">
 
-	<suave:MaterialButton x:Name="MyButton" BackgroundColor="#03A9F4" TextColor="White" Text="Click to raise elevation" Elevation="1" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center"
-           Clicked="MyButton_Clicked"/>
+	<suave:MaterialButton x:Name="MyButton" 
+                          BackgroundColor="#03A9F4" 
+                          TextColor="White" 
+                          Text="Click to raise elevation" 
+                          Elevation="1" 
+                          VerticalOptions="Center" 
+                          HorizontalOptions="Center"
+                          WidthRequest="300"
+                          Clicked="MyButton_Clicked"/>
 
 </ContentPage>

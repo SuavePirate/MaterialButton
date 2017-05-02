@@ -11,13 +11,15 @@ using Android.Views;
 using Android.Widget;
 using Xamarin.Forms.Platform.Android.AppCompat;
 using Xamarin.Forms;
-using SuaveControls.MaterialButton.Android;
+using SuaveControls.MaterialButton.Droid;
 using SuaveControls.MaterialButton.Shared;
 using Xamarin.Forms.Platform.Android;
 using System.ComponentModel;
+using Android.Graphics;
+using Android.Support.V4.View;
 
 [assembly: ExportRenderer(typeof(MaterialButton), typeof(MaterialButtonRenderer))]
-namespace SuaveControls.MaterialButton.Android
+namespace SuaveControls.MaterialButton.Droid
 {
     public class MaterialButtonRenderer : Xamarin.Forms.Platform.Android.AppCompat.ButtonRenderer
     {
@@ -32,7 +34,16 @@ namespace SuaveControls.MaterialButton.Android
                 return;
 
             var materialButton = (Shared.MaterialButton)Element;
+            Control.StateListAnimator = new Android.Animation.StateListAnimator();
+            ViewCompat.SetElevation(this, materialButton.Elevation);
+            ViewCompat.SetElevation(Control, materialButton.Elevation);
+        }
+
+        public override void Draw(Canvas canvas)
+        {
+            var materialButton = (Shared.MaterialButton)Element;
             Control.Elevation = materialButton.Elevation;
+            base.Draw(canvas);
         }
 
         /// <summary>
@@ -46,7 +57,9 @@ namespace SuaveControls.MaterialButton.Android
             if(e.PropertyName == "Elevation")
             {
                 var materialButton = (Shared.MaterialButton)Element;
-                Control.Elevation = materialButton.Elevation;
+                ViewCompat.SetElevation(this, materialButton.Elevation);
+                ViewCompat.SetElevation(Control, materialButton.Elevation);
+                UpdateLayout();
             }
         }
     }

@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("SuaveControls.MaterialButton.Android.Resource", IsApplication=false)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("SuaveControls.MaterialButton.Droid.Resource", IsApplication=false)]
 
-namespace SuaveControls.MaterialButton.Android
+namespace SuaveControls.MaterialButton.Droid
 {
 	
 	

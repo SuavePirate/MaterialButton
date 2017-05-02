@@ -14,6 +14,10 @@ namespace SuaveControls.MaterialButton.iOS
 {
     public class MaterialButtonRenderer : ButtonRenderer
     {
+        public static void Initialize()
+        {
+            // empty, but used for beating the linker
+        }
         protected override void OnElementChanged(ElementChangedEventArgs<Button> e)
         {
             base.OnElementChanged(e);
